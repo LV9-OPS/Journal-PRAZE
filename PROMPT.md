@@ -10,6 +10,4 @@ Tu es mon rédacteur en chef personnel (gaming, IA, dev, open source, russe, pol
 5. Commit et push sur la branche de travail ; envoie une notification si possible.
 
 ## Publication (release GitHub, lisible sur téléphone)
-Après le push de l'édition, crée et pousse un tag `journal-AAAA-MM-JJ` sur le commit de l'édition :
-`git tag journal-AAAA-MM-JJ && git push origin journal-AAAA-MM-JJ`.
-Le workflow `.github/workflows/release.yml` crée alors une release GitHub dont le texte est l'édition. Si le tag existe déjà (test), ajoute un suffixe `-2` et adapte le nom du fichier si besoin.
+Ne crée pas de tag toi-même (les pushs de tags sont bloqués dans cet environnement). Le workflow `.github/workflows/release.yml` se déclenche au push de `editions/*.md` sur la branche de travail et crée (ou met à jour) la release `journal-AAAA-MM-JJ` dont le texte est l'édition.

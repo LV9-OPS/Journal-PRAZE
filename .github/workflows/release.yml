@@ -2,8 +2,11 @@ name: Release NIGHT JOURNAL
 
 on:
   push:
-    tags:
-      - "journal-*"
+    branches:
+      - claude/night-journal-daily-cx46hn
+    paths:
+      - "editions/*.md"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,11 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create release from edition
+      - name: Create or update release from latest edition
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          date="${GITHUB_REF_NAME#journal-}"
-          file="editions/${date}.md"
-          test -f "$file"
-          gh release create "$GITHUB_REF_NAME" --title "NIGHT JOURNAL — ${date}" --notes-file "$file"
+          file=$(ls editions/*.md | sort | tail -n 1)
+          date=$(basename "$file" .md)
+          tag="journal-${date}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release edit "$tag" --title "NIGHT JOURNAL — ${date}" --notes-file "$file"
+          else
+            gh release create "$tag" --target "$GITHUB_SHA" --title "NIGHT JOURNAL — ${date}" --notes-file "$file"
+          fi
