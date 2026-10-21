@@ -1,0 +1,23 @@
+name: Release NIGHT JOURNAL
+
+on:
+  push:
+    tags:
+      - "journal-*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release from edition
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          date="${GITHUB_REF_NAME#journal-}"
+          file="editions/${date}.md"
+          test -f "$file"
+          gh release create "$GITHUB_REF_NAME" --title "NIGHT JOURNAL — ${date}" --notes-file "$file"
