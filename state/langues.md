@@ -1,9 +1,11 @@
 # Progression langues (à mettre à jour à chaque édition)
 
 ## Russe
-- Édition 1 (2026-10-21) : lettres П Р В Н Е С ; mots Привет, Спасибо, Да, Нет.
-- Prochain : Д А Т И Б О (déjà vues dans les mots), Здравствуйте, Пожалуйста, ты/вы.
+- Éd. 1 (2026-10-21) : lettres П Р В Н Е С ; Привет, Спасибо, Да, Нет.
+- Éd. 2 (2026-10-22) : lettres Д К Х Ш Ж ; Пока, Пожалуйста, Хорошо, Здравствуйте ; ты/вы.
+- Prochain : lettres Л М З Б Г Ч ; Извините, Как дела ?, Меня зовут… ; chiffres 1-5.
 
 ## Polonais
-- Édition 1 (2026-10-21) : Cześć, Dziękuję, Tak, Nie, Proszę ; sons cz sz ś ę rz ł.
-- Prochain : ą, ń, ź, ż ; Dzień dobry ; Przepraszam ; Pan/Pani en pratique.
+- Éd. 1 (2026-10-21) : Cześć, Dziękuję, Tak, Nie, Proszę ; sons cz sz ś ę rz ł.
+- Éd. 2 (2026-10-22) : Dzień dobry, Do widzenia, Przepraszam, Dobrze ; sons ą ń ż ź ; Pan/Pani.
+- Prochain : Jak się masz ?, Nazywam się… ; chiffres 1-5 ; le « ć » et « dz ».
